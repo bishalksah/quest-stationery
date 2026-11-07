@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Quest Stationery Store (version 3, Vercel ready)
 
 Stationery management for Quest Group of Institutions.
@@ -49,3 +50,6 @@ and all old items and records are kept. Institutions found in old records are ad
 ## Optional email alerts
 Set before `npm start`: SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_FROM, ALERT_EMAIL.
 Administrators with an email address in their profile also receive low-stock and budget alerts.
+=======
+# quest-stationery
+>>>>>>> 1859af693d5bbaf25e9444e9d6c78689c46c1c73
