@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quest Stationery Store</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.dataset.theme = localStorage.getItem('qs_theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');</script>
+</head>
+<body>
+
+<main id="login" class="login hidden">
+  <form id="loginForm" class="login-card">
+    <img src="logo.webp" alt="Quest Group of Institutions" class="login-logo">
+    <h1>Stationery Store Portal</h1>
+    <p>Sign in to manage and request stationery across all Quest institutions.</p>
+    <label>Username <input name="username" autocomplete="username" required></label>
+    <label>Password <input name="password" type="password" autocomplete="current-password" required></label>
+    <p id="loginError" class="error" role="alert"></p>
+    <button class="btn primary big" type="submit">Sign in</button>
+  </form>
+</main>
+
+<div id="app" class="app hidden">
+  <div id="scrim" class="scrim"></div>
+  <aside class="side" id="side">
+    <a class="brand" href="#dashboard"><img src="logo.webp" alt="Quest Group of Institutions"></a>
+    <nav id="nav" aria-label="Main"></nav>
+    <div class="side-foot">
+      <button id="themeBtn" class="btn ghost block" type="button"></button>
+      <button id="logout" class="btn ghost block" type="button"></button>
+    </div>
+  </aside>
+
+  <div class="content">
+    <header class="topbar">
+      <button id="menuBtn" class="icon-btn menu-btn" type="button" aria-label="Open menu"></button>
+      <h1 id="pageTitle" class="page-title">Dashboard</h1>
+      <div class="topbar-right">
+        <div class="notif-wrap">
+          <button id="bell" class="icon-btn bell" type="button" aria-label="Notifications" aria-expanded="false" aria-controls="notifPanel">
+            <span id="bellIcon"></span><span id="bellCount" class="bell-count hidden">0</span>
+          </button>
+          <div id="notifPanel" class="notif-panel hidden" role="dialog" aria-label="Notifications">
+            <div class="notif-head"><b>Notifications</b>
+              <span><button type="button" class="link-btn" id="markAll">Mark all as read</button><button type="button" class="link-btn" id="clearAll">Clear all</button></span>
+            </div>
+            <div id="notifList" class="notif-list"></div>
+          </div>
+        </div>
+        <button id="adminChip" class="admin-chip" type="button" aria-label="My account">
+          <span class="avatar" id="adminAvatar">SK</span>
+          <span class="admin-text"><b id="adminName"></b><small id="adminRole"></small></span>
+        </button>
+      </div>
+    </header>
+    <div class="stripes" aria-hidden="true"></div>
+    <main id="view" class="main"></main>
+  </div>
+</div>
+
+<dialog id="modal"><div id="modalBox"></div></dialog>
+<div id="toast" class="toast" role="status"></div>
+
+<script src="core.js"></script>
+<script src="p-dashboard.js"></script>
+<script src="p-store.js"></script>
+<script src="p-issue.js"></script>
+<script src="p-requests.js"></script>
+<script src="p-records.js"></script>
+<script src="p-reports.js"></script>
+<script src="p-admin.js"></script>
+<script src="start.js"></script>
+</body>
+</html>

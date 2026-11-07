@@ -1,0 +1,7 @@
+node_modules/
+.env
+stationery.db
+stationery.db-*
+backups/
+backup-*.json
+.vercel/
